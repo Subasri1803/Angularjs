@@ -1,0 +1,81 @@
+<html>
+<link href="style.css" rel="stylesheet"></link>
+<head>
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head> 
+
+<body>
+
+<div ng-app="myApp">
+<div ng-controller="myCtrl">
+    <h2>
+        <center><h1 style="color:green">StoryPad</h1></center>
+    </h2>
+	<ul> 
+	     <li><a href="create.html">Create</a></li>
+		 <li><a href="index.html">Home</a></li>
+		  <li><a href="log.html">Login</a></li>
+	</ul>
+	<br>
+	<br>
+
+	<br>
+	<br>
+	
+		
+	<center>	 <input id="chshow" type="checkbox" ng-model="show" /> 
+          
+        <label for="chshow"> 
+            Today's Story :)
+        </label> 
+          
+        <p ng-show="show" style="background: green; color: white;  
+                font-size: 14px; width:35%; padding: 10px;"> 
+            One day, a selfish fox invited a stork for dinner. Stork was very happy with the invitation – she reached the fox’s home 
+			on time and knocked at the door with her long beak. The fox took her to the dinner table and served some soup in shallow 
+			bowls for both of them. As the bowl was too shallow for the stork, she couldn’t have soup at all. But, the fox licked up his soup quickly.
+
+The stork was angry and upset, but she didn’t show her anger and behaved politely. To teach a lesson to the fox, she then invited him
+ for dinner the next day. She too served soup, but this time the soup was served in two tall narrow vases. The stork devoured the soup from her vase,
+ but the fox couldn’t drink any of it because of his narrow neck. The fox realised his mistake and went home famished.<br>
+
+Moral of the Story:-
+A selfish act backfires sooner or later! 
+        </p></center> <br><br>
+		
+<center>		<h2>Here are the some of the famous stories I refer to you :)<h2><br>
+	
+       <table class="friends">
+    <tr>
+      <th>Name</th>
+      <th>Author</th>
+     
+    </tr>
+    <tr ng-repeat="friend in friends | orderBy:'author'">
+      <td>{{friend.name}}</td>
+      <td>{{friend.author}}</td>
+      
+    </tr>
+  </table></center>
+		<br>
+		
+			
+<center><h2> To add your favourite books click here</h2> </center>
+<center><a href="fact.html">Click here to post your favourite stories</a></center>
+	<br>
+		
+<center>		<p>{{timeofday}},{{greet}}!!!!</p>
+		
+
+<div ng-controller="yrctrl">
+<p>{{timeofday}},{{greet}}!!!!</p> </center>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+<link href="style.css" rel="stylesheet"></link>
+<head>
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+</head>
+<body>
+
+	
+<div ng-app="myApp" ng-controller="myCtrl">
+
+
+<center><h1>{{myHeader}}</h1></center>
+
+
+<center><p>Select the journal according to your tale :)</p>
+	<br>
+<select ng-model="selectedName" ng-options="x for x in names">
+</select>
+<br><br><br>
+
+Selected Journal:  
+        <input type="text" ng-model="selectedName" />
+		<br>
+</center>
+	<br><br>
+    <div class="create">
+
+  <center>      <textarea id="fill" rows="20" cols="100" ng-keypress="kp2=kp2-1"> </textarea>({{kp2}} words only allowed)
+		<br><br>
+		
+		<label>Click me to Enable the Button: 
+
+         <input type="checkbox" ng-model="check"> </label><br>
+
+        <button class= "button" type="button" ng-disabled="!(check)"> 
+            Submit 
+        </button> 
+      </center>     
+        
+</div>
+<br>
+<br>
+
+ <form name="form" ng-submit="login()" ng-hide="isShow"> 
+     <center>       Your Name: <input type="text" ng-model="users.user" required /> 
+            <br /><br />             
+            <button ng-disabled="form.$invalid">Click to Subscribe</button> 
+            </form> 
+            <br> 
+            <pre ng-show="isShow">Thank you <b>{{name}}</b>  
+             You Subscribed our page :)
+             </pre> 
+            <input ng-show="isShow" type="button" value="Unsubscribe" 
+            ng-click="isShow=false" /> 
+			</center>
+	</div>
+</body>
+</html>
+
